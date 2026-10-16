@@ -36,5 +36,6 @@ public abstract class MenuItem {
         this.stokbase = stokbase;
     }
     public abstract String getOrderDetail();
+    public abstract String getOrderDetails();
     public abstract double hitungHargaTotal();
 }

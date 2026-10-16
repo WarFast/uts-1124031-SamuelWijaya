@@ -31,13 +31,19 @@ public  List<MenuItem> getDaftarProduk() {
         }
         throw new MenuTidakDitemukanException("Menu dengan ID " + id + " tidak ditemukan.");
     }
-    public MenuItem getstokById(String id) throws InputTidakValidException {
+    public int getstokById(int stok) throws InputTidakValidException {
+        if (stok >0){
+            return stok;
+        }
+        throw new InputTidakValidException("nilai kurang dari 0");
+    }
+    public MenuItem getstokById2(int stok) throws InputTidakValidException {
         for (MenuItem item : daftarProduk) {
-            if (item.getStokbase()<0) {
+            if (item.getStokbase()>=stok) {
                 return item;
             }
         }
-        throw new InputTidakValidException("Menu .");
+        throw new StokTidakCukupException("stok kurang");
     }
 
 

@@ -34,12 +34,21 @@ public class MainView {
             } catch (MenuTidakDitemukanException e) {
                 System.out.println("Menu tidak ditemukan.");
             }
+            int Stok = InputUtil.getInt("stok:");
         try {
+        productController.getstokById(Stok);
+        }catch (InputTidakValidException e){
+            System.out.println("input harus berupa angka desimal valid.");
+        }
+        try {
+            productController.getstokById2(Stok);
 
         }catch (StokTidakCukupException e){
-            System.out.println("stok kurang");
+            System.out.println("Stok kurang");
         }
 
+
+            System.out.println("customatation");
 
         }
     }

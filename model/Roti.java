@@ -43,7 +43,7 @@ public class Roti extends Kopi implements Customizable {
         if (customizations < 0 || customizations > 5 || // Gula max 5
                 customizations < 0 || customizations > 5 || // Meses max 5
                 customizations < 0 || customizations > 5) { // Karamel max 5
-            System.out.println("Jumlah kustomisasi Roti melanggar batas aturan!");
+            System.out.println("aJumlah kustomisasi Roti melanggar batas aturan!");
             return;
         }
 

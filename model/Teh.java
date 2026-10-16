@@ -3,9 +3,11 @@ package model;
 import java.util.List;
 
 public class Teh extends MenuItem implements Customizable {
+    int tambahanhargateh;
     public Teh(String id,String name,int hargabase,int stokbase) {
         super(id,name,hargabase,stokbase);
     }
+
     @Override
     public String getOrderDetail() {
         return getId()+": "+getName()+"(stok: "+getStokbase()+")";
@@ -26,4 +28,9 @@ public class Teh extends MenuItem implements Customizable {
     public void customize(int[] customizations) {
 
     }
+
+    public String getOrderDetails() {
+        return getId() + ": " + getName() + " (harga " +tambahanhargateh+getHargabase()+ ")";
+    }
 }
+

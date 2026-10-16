@@ -52,6 +52,6 @@ public class Kopi extends MenuItem implements Customizable {
     }
     @Override
     public String getOrderDetails() {
-        return getId() + ": " + getName() + " (stok: " + getStokbase() + ")";
+        return getId() + ": " + getName() + " (harga " +tambahanHarga+getHargabase()+ ")";
     }
 }

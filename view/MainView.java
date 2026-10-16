@@ -11,8 +11,9 @@ public class MainView {
     public MainView() {
         productController = new ProductController();
     }
-    public void start(){
-    boolean isRunning = true;
+
+    public void start() {
+        boolean isRunning = true;
         while (isRunning) {
             System.out.println("\n=== DAFTAR SEMUA PRODUK ===");
             List<MenuItem> list = productController.getDaftarProduk();
@@ -35,20 +36,17 @@ public class MainView {
                 System.out.println("Menu tidak ditemukan.");
             }
             int Stok = InputUtil.getInt("stok:");
-        try {
-        productController.getstokById(Stok);
-        }catch (InputTidakValidException e){
-            System.out.println("input harus berupa angka desimal valid.");
-        }
-        try {
-            productController.getstokById2(Stok);
+            try {
+                productController.getstokById(Stok);
+            } catch (InputTidakValidException e) {
+                System.out.println("input harus berupa angka desimal valid.");
+            }
+            try {
+                productController.getstokById2(Stok);
+            } catch (StokTidakCukupException e) {
+                System.out.println("Stok kurang");
+            }
 
-        }catch (StokTidakCukupException e){
-            System.out.println("Stok kurang");
-        }
-
-
-            System.out.println("customatation");
 
         }
     }

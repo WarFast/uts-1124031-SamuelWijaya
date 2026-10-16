@@ -1,5 +1,8 @@
+import view.MainView;
+import controller.ProductController;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ProductController controller = new ProductController();
+
     }
 }

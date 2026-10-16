@@ -8,7 +8,7 @@ public class Roti extends Kopi implements Customizable{
     }
     @Override
     public String getOrderDetail() {
-        return "";
+        return getId()+": "+getName()+"(stok: "+getStokbase()+")";
     }
 
     @Override

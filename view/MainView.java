@@ -11,12 +11,36 @@ public class MainView {
     public MainView() {
         productController = new ProductController();
     }
-    MenuItem menuitem = null;
-    menuitem = new Roti(1,1,1,1);
     public void start(){
     boolean isRunning = true;
         while (isRunning) {
-            System.out.println("");
+            System.out.println("\n=== DAFTAR SEMUA PRODUK ===");
+            List<MenuItem> list = productController.getDaftarProduk();
+
+            if (list.isEmpty()) {
+                System.out.println("Belum ada produk.");
+                return;
+            }
+
+            for (MenuItem menuItem : list) {
+                System.out.println(menuItem.getOrderDetail());
+            }
+
+            try {
+                String id = InputUtil.getString("id produk:");
+
+                // PERBAIKAN: Panggil method controller untuk mencari produk berdasarkan ID di sini
+                MenuItem produkTerpilih = productController.getProdukById(id);
+
+                // Jalankan logika berikutnya jika produk ditemukan, misalnya:
+                System.out.println("Anda memilih: " + produkTerpilih.getName());
+
+            } catch (MenuTidakDitemukanException e) {
+                System.out.println("Menu tidak ditemukan.");
+            }
+
+
+
         }
     }
 }

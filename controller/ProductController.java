@@ -15,9 +15,12 @@ public void addKopi(String id,String nama,int hargabase,int stokbase){
 public void addRoti(String id,String nama,int hargabase,int stokbase){
         daftarProduk.add(new Roti(id,nama,hargabase,stokbase));
     }
-    public void addKopi(String id,String nama,int hargabase,int stokbase){
-        daftarProduk.add(new Kopi(id,nama,hargabase,stokbase));
+    public void addTeh(String id,String nama,int hargabase,int stokbase){
+        daftarProduk.add(new Teh(id,nama,hargabase,stokbase));
     }
+public  List<MenuItem> getDaftarProduk() {
+    return daftarProduk;
+}
 
 
 }

@@ -25,20 +25,20 @@ public class MainView {
             for (MenuItem menuItem : list) {
                 System.out.println(menuItem.getOrderDetail());
             }
-
+            String id = InputUtil.getString("id produk:");
             try {
-                String id = InputUtil.getString("id produk:");
-
-                // PERBAIKAN: Panggil method controller untuk mencari produk berdasarkan ID di sini
                 MenuItem produkTerpilih = productController.getProdukById(id);
 
-                // Jalankan logika berikutnya jika produk ditemukan, misalnya:
                 System.out.println("Anda memilih: " + produkTerpilih.getName());
 
             } catch (MenuTidakDitemukanException e) {
                 System.out.println("Menu tidak ditemukan.");
             }
+        try {
 
+        }catch (StokTidakCukupException e){
+            System.out.println("stok kurang");
+        }
 
 
         }
